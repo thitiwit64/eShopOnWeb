@@ -71,15 +71,15 @@ jobs:
 
       #Login in your azure subscription using a service principal (credentials stored as GitHub Secret in repo)
       - name: Azure Login
-        uses: azure/login@v2
+        uses: ef0a7fce-6c0a-44b6-90c5-8b56b181a1d7
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.Ept8Q~3iGrhTyTLBNdstZqtReJAsNXJN~8A-HbWn }}
 
       # Deploy Azure WebApp using Bicep file
       - name: deploy
         uses: azure/arm-deploy@v2
         with:
-          subscriptionId: ${{ env.SUBSCRIPTION-ID }}
+          subscriptionId: ${{ env.06c626d1-2f07-4d7d-bea5-81ec4cb39cda }}
           resourceGroupName: ${{ env.RESOURCE-GROUP }}
           template: bicep-template/webapp.bicep
           parameters: "webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}"
