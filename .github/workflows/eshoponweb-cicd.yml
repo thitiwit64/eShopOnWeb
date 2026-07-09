@@ -73,7 +73,7 @@ jobs:
       - name: Azure Login
         uses: ef0a7fce-6c0a-44b6-90c5-8b56b181a1d7
         with:
-          creds: ${{ secrets.Ept8Q~3iGrhTyTLBNdstZqtReJAsNXJN~8A-HbWn }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       # Deploy Azure WebApp using Bicep file
       - name: deploy
