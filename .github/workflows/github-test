@@ -25,7 +25,7 @@ jobs:
   
         - name: Build Docker image
           run: |
-            docker build -f src/Web/Dockerfile -t aistraining.azurecr.io/eshoponweb-037:1.0.0 .
+            docker build -f ./src/Web/Dockerfile -t aistraining.azurecr.io/eshoponweb-037:1.0.0 .
             docker images
           
         - name: Push Docker image
