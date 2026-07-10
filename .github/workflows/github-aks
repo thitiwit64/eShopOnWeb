@@ -41,6 +41,7 @@ jobs:
         with:
           container-registry-url: ${{ env.ACR_LOGIN_SERVER }}
           container-registry-name: aistraining
+          container-registry-username: ${{ secrets.ACR_USERNAME }}
           container-registry-password: ${{ secrets.ACR_PASSWORD }}
           secret-name: aks-secret
  
@@ -49,5 +50,5 @@ jobs:
           manifests: |
             .k8s/deployment.yaml
             .k8s/service.yaml
-          images: aistraining.azurecr.io/eshoponwebapp-user003:1.0.0
+          images: ${{ env.IMAGE_NAME }}
           imagepullsecrets: aks-secret    
