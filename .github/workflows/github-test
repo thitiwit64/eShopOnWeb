@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t $IMAGE_NAME .
+        run: docker build -f src/Web/Dockerfile -t $IMAGE_NAME .
 
       - name: Push Docker image
         run: docker push $IMAGE_NAME
