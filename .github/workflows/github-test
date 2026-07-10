@@ -12,12 +12,12 @@ jobs:
   build-container:
     runs-on: ubuntu-latest
 
-steps:
+    steps: # แก้ไขการย่อหน้าให้อยู่ใต้ build-container
       - name: Checkout source code
-        uses: actions/checkout@v7.0
+        uses: actions/checkout@v4
 
       - name: Login to Azure Container Registry
-        uses: docker/login-action@v4.4.0
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.ACR_LOGIN_SERVER }}
           username: ${{ secrets.ACR_USERNAME }}
