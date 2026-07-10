@@ -34,7 +34,7 @@ jobs:
           container-registry-name: aistraining
           container-registry-username: ${{ secrets.ACR_USERNAME }}
           container-registry-password: ${{ secrets.ACR_PASSWORD }}
-          secret-name: aks-secret
+          secret-name: aks-secret-${{ github.run_id }}
 
       - name: Deploy to Kubernetes cluster
         uses: azure/k8s-deploy@v5
@@ -44,4 +44,4 @@ jobs:
             .k8s/service.yaml
           images: ${{ env.IMAGE_NAME }}
           imagepullsecrets: |
-            aks-secret
+            aks-secret-${{ github.run_id }}
