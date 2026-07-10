@@ -19,5 +19,3 @@ spec:
         image: aistraining.azurecr.io/eshoponwebapp-user003:1.0.0
         ports:
         - containerPort: 80
-      imagePullSecrets:
-      - name: aks-secret
